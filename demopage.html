@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Real-Time System Time</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        color: #333;
+        margin-top: 50px;
+      }
+
+      #time-section {
+        background-color: #e6e6e6;
+        padding: 20px;
+      }
+
+      #time {
+        font-size: 48px;
+        color: #ff3366;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+    <script>
+      function updateTime() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = ("0" + (date.getMonth() + 1)).slice(-2);
+        var day = ("0" + date.getDate()).slice(-2);
+        var hours = ("0" + date.getHours()).slice(-2);
+        var minutes = ("0" + date.getMinutes()).slice(-2);
+        var seconds = ("0" + date.getSeconds()).slice(-2);
+        var formattedTime =
+          year +
+          "년 " +
+          month +
+          "월 " +
+          day +
+          "일 " +
+          hours +
+          "시 " +
+          minutes +
+          "분 " +
+          seconds +
+          "초";
+        document.getElementById("time").textContent = formattedTime;
+      }
+
+      // Update time every second
+      setInterval(updateTime, 1000);
+    </script>
+  </head>
+  <body>
+    <h1>
+      allClear만 믿고 따라오세요! 여기 당신만을 위한 시계가 돌아가고 있답니다 :)
+    </h1>
+    <div id="time-section">
+      <p id="time"></p>
+    </div>
+  </body>
+</html>
